@@ -1,0 +1,28 @@
+<h2> Affiliations</h2>
+{% if Affiliations %}
+<p>Found {{ Affiliations|length }} Affiliation {{ co_auths|pluralize }}.</p>
+<ul>
+{% for Affs in Affiliations %}
+{% for Aff in Affs %}
+<li>{{ Aff}}</li>
+{% endfor %}
+{% endfor %}
+</ul>
+{% else %}
+<p>No Affliations matched your search criteria.</p>
+{% endif %}
+
+<h2> Co_authors</h2>
+
+{% if co_auths %}
+<p>Found {{ co_auths|length }} coauthor{{ co_auths|pluralize }}.</p>
+<ul>
+{% for coauthors in co_auths %}
+{% for coauthor in coauthors %}
+<li>{{ coauthor}}</li>
+{% endfor %}
+{% endfor %}
+</ul>
+{% else %}
+<p>No coauthors matched your search criteria.</p>
+{% endif %}
